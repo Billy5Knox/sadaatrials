@@ -1,0 +1,37 @@
+footer {
+	text-align: center;
+}
+
+/*
+.comments {
+    text-align: left;
+    background-color: #C0BFBF;
+}
+*/
+select{
+/*
+    border-radius: 4px;
+    box-sizing: border-box;
+*/
+    padding: 6px 5px;
+}
+/*
+input[name="Dog Age"]{
+    width: 65px;
+}
+
+input[type="checkbox"]{
+    display:inline-block;
+    width: 19px;
+    height: 19px;
+    vertical-align: middle;
+}
+
+th[name="tablehead1"]{
+    text-align: center;
+}
+*/
+
+.comments {
+
+}
