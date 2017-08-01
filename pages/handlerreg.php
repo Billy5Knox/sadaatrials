@@ -14,6 +14,7 @@
             exit;
     }
 */	
+   
     $userLoginID = $_SESSION['userLogin'];
     //Check to see if a handlers profile can be found
     $queryProfile = $dbconn->query("SELECT * FROM handlers WHERE id_login='{$_SESSION['userLogin']}'");
@@ -209,6 +210,33 @@
                         </div>";
 
                 $hasHandlerProfile = "yes";
+
+                //These are to be used for the emailing notification sent on registration
+                $to         = "billyknox@gmail.com.co.za";
+                $subject    = "New SADAA handler registration";
+                $emailFrom  = "admin@sadaatrials.co.za";
+                $message    = "<p>First Name: $firstname <br>
+                                   Last Name: $lastname <br>
+                                      Street: $street <br>
+                                        Area: $area <br>
+                                        City: $city <br>
+                                    Province: $province <br>
+                                 Postal Code: $postalcode <br>
+                                   ID Number: $idnumber <br>
+                                         Fax: $fax <br>
+                                       Phone: $phone <br>
+                                        Cell: $cell <br>
+                                       Email: $emailaddress <br>
+                                SADAA Number: $sadaanumber <br>
+                                 Member Type: $membertype <br>
+                                 Is A Judge?: $checkboxJudge <br>
+                                 Will Judge?: $checkboxWillJudge <br><br>
+                                Please do not reply to this email address.
+                               </p>";
+                $headers    = "From: SADAA Trials <admin@sadaatrials.co.za>\r\n";
+                $headers    = "Reply-To: admin@sadaatrials.c.za\r\n";
+                $headers    = "Content-type: text/html\r\n";
+                $sent = mail($to, $subject, $message, $headers);
 
                 header("Location: ../index.php");
             } else {
@@ -486,7 +514,7 @@
                     </div>
                 </div>
 
-            <?php if ($hasHandlerProfile == 'no') { ?> <!--If a new profile is being created display submit button-->
+            <?php if ($hasHandlerProfile == 'no') { ?> <!--If a new profile is being created display create button-->
                     <button type="submit" class="btn btn-default btn-block submit-button" name="btn-create" id="btn-create">Submit Form</button>
             <?php } ?>
             <?php if ($hasHandlerProfile == 'yes') { ?> <!--If an already created profile is being modified display the update button-->
