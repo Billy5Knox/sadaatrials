@@ -50,7 +50,7 @@
                 //If no handler profile is found then go to the handler profile page.
                 if ($countProfile == 0){
                     $_SESSION['hasHandlerProfile'] = "no";
-                    header("Location: handler.php");
+                    header("Location: handlerreg.php");
                 } else {
                     $_SESSION['hasHandlerProfile'] = "yes";
                     header("Location: ../index.php");
