@@ -19,18 +19,18 @@ select{
 input[name="Dog Age"]{
     width: 65px;
 }
-
+*/
+/*
 input[type="checkbox"]{
     display:inline-block;
     width: 19px;
     height: 19px;
     vertical-align: middle;
 }
-
-th[name="tablehead1"]{
+*/
+th[name="tableheader"]{
     text-align: center;
 }
-*/
 
 .comments {
 
